@@ -112,11 +112,11 @@ waitForElm('div[class="metadata-buttons-wrapper style-scope ytd-playlist-header-
     scrollb.onclick = ()=>{
         console.log("True");
     	var scrolldown = setInterval(() => window.scrollBy(0, 2000), 200);
-        enable = enable ? false : true;
-  		else if(enable == false){
+  		if(enable == false){
       	    console.log("False");
       	    clearInterval(scrolldown);
     	}
+        enable = enable ? false : true;
     };
     buttonrenderer = document.createElement("ytd-button-renderer");
     buttonrenderer.className = "style-scope ytd-playlist-header-renderer";
