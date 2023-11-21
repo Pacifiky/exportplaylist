@@ -92,19 +92,30 @@ waitForElm('div[class="metadata-buttons-wrapper style-scope ytd-playlist-header-
   
   let scrollb = document.createElement('button');
   	scrollb.className = classes;
+    /*
     scrollb.onclick = ()=>{
-      if(enable==true){
-      	console.log("True");
-    		var scrolldown = setInterval(() => window.scrollBy(0, 2000), 200);
-        dscrollb.onclick = ()=>{
-          console.log("False");
-      		clearInterval(scrolldown);
-        };
-        enable = false;
+        if(enable==true){
+      	    console.log("True");
+    	    var scrolldown = setInterval(() => window.scrollBy(0, 2000), 200);
+            dscrollb.onclick = ()=>{
+              console.log("False");
+      		    clearInterval(scrolldown);
+            };
+            enable = false;
     	}
   		else{
       	console.log("False");
       	clearInterval(scrolldown);
+    	}
+    };
+    */
+    scrollb.onclick = ()=>{
+        console.log("True");
+    	var scrolldown = setInterval(() => window.scrollBy(0, 2000), 200);
+        enable = enable ? false : true;
+  		else if(enable == false){
+      	    console.log("False");
+      	    clearInterval(scrolldown);
     	}
     };
     buttonrenderer = document.createElement("ytd-button-renderer");
